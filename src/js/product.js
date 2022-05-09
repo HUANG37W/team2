@@ -1,6 +1,11 @@
 import ProductData from './productData.js';
 import { getParam } from './utils.js';
 import ProductDetails from './productDetails.js';
+import Superscript from "./superscript";
+
+const superscript = new Superscript();
+
+superscript.addSuperscript()
 
 const dataSource = new ProductData('tents');
 const productId = getParam('product');

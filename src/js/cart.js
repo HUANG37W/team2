@@ -1,3 +1,8 @@
+import Superscript from "./superscript";
+
+const superscript = new Superscript();
+
+superscript.addSuperscript()
 function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
