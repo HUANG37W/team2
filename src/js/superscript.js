@@ -1,15 +1,22 @@
 export default class Superscript{
-    getLocalStorage(key) {
-        const cartItems = [JSON.parse(localStorage.getItem(key))];
-        if (cartItems[0] == null) {
-          cartItems.length -= 1;
-        }
-        console.log(cartItems.length);
-        return cartItems.length;
-      }
+  getLocalStorage() {
+    var values = [],
+    keys = Object.keys(localStorage),
+    i = keys.length;
+    
+    
+    
+    while ( i-- ) {
+    values.push(JSON.parse(localStorage.getItem(keys[i])) );
+    }
+    
+    
+    
+    return values.length;
+  }
     addSuperscript() {
         
-        const number = this.getLocalStorage("so-cart")
+        const number = this.getLocalStorage()
         document.styleSheets[0].addRule(".cart::before", `content: '${number}';`);
 
     }
