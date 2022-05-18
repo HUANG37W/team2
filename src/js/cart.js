@@ -1,3 +1,6 @@
+import { loadHeaderFooter } from "./utils";
+loadHeaderFooter();
+
 function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
@@ -32,3 +35,4 @@ function renderCartItem(item) {
 }
 
 getCartContents();
+
