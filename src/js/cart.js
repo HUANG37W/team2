@@ -3,12 +3,24 @@ import Superscript from "./superscript";
 const superscript = new Superscript();
 
 superscript.addSuperscript()
-function getLocalStorage(key) {
-  return JSON.parse(localStorage.getItem(key));
+function getLocalStorage() {
+  var values = [],
+  keys = Object.keys(localStorage),
+  i = keys.length;
+  
+  
+  
+  while ( i-- ) {
+  values.push(JSON.parse(localStorage.getItem(keys[i])) );
+  }
+  
+  
+  
+  return values;
 }
 
 function getCartContents() {
-  const cartItems = [getLocalStorage("so-cart")];
+  const cartItems = getLocalStorage();
   //const htmlItems = cartItems.map((item) => renderCartItem(item));
   //document.querySelector(".product-list").innerHTML = htmlItems.join("");
   if(cartItems[0] != null) {
