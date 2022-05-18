@@ -1,3 +1,11 @@
+
+import { loadHeaderFooter } from "./utils";
+loadHeaderFooter();
+
+function getLocalStorage(key) {
+  return JSON.parse(localStorage.getItem(key));
+}
+
 import Superscript from "./superscript";
 
 const superscript = new Superscript();
@@ -17,6 +25,7 @@ function getLocalStorage() {
   
   
   return values;
+
 }
 
 function getCartContents() {
@@ -49,3 +58,4 @@ function renderCartItem(item) {
 }
 
 getCartContents();
+
