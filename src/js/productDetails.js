@@ -16,7 +16,7 @@ export default class ProductDetails {
   }
   addToCart() {
     
-    setLocalStorage('so-cart', this.product);
+    setLocalStorage(this.productId, this.product);
   }
   renderProductDetails() {
     return `<section class="product-detail"> <h3>${this.product.Brand.Name}</h3>
