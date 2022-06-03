@@ -17,10 +17,12 @@ export function qs(selector, parent = document) {
 export function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
+
 // save data to local storage
 export function setLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
+
 // set a listener for both touchend and click
 export function setClick(selector, callback) {
   qs(selector).addEventListener("touchend", (event) => {
@@ -37,14 +39,21 @@ export function getParam(param) {
   return product;
 }
 export function renderWithTemplate(template, parent, data, callback) {
-
   let clone = template.content.cloneNode(true);
   if(callback) {
     clone = callback(clone, data);
   }
   parent.appendChild(clone);
-
 }
+
+export function renderListWithTemplate(template, parent, list, callback) {
+  list.forEach(item => {
+    const clone = template.content.cloneNode(true);
+    const templateWithData = callback(clone, item);
+    parent.appendChild(templateWithData);
+  })
+}
+
 export async function loadTemplate(path) {
   const html = await fetch(path).then(convertToText);
   const template = document.createElement('template');
