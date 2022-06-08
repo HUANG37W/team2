@@ -35,9 +35,9 @@ export function setClick(selector, callback) {
 export function getParam(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const product = urlParams.get('product');
-  return product;
+  return urlParams.get(param);
 }
+
 export function renderWithTemplate(template, parent, data, callback) {
   let clone = template.content.cloneNode(true);
   if(callback) {
