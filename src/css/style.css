@@ -38,6 +38,11 @@ header {
   margin: 0;
 }
 
+ .svg-logo img {
+  width: 200px;
+  height: 200px;
+} 
+
 .logo {
   line-height: 60px;
   width: 245px;
