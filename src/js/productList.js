@@ -1,5 +1,4 @@
 import { renderListWithTemplate } from './utils.js';
-// import { ProductData  } from './productData.js';
 
 export default class ProductList {
   constructor(category, dataSource, listElement) {

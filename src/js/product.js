@@ -1,4 +1,4 @@
-import ProductData from './productData.js';
+import ExternalServices from './ExternalServices.js';
 import { getParam } from './utils.js';
 import ProductDetails from './productDetails.js';
 import Superscript from "./superscript";
@@ -7,7 +7,7 @@ const superscript = new Superscript();
 
 superscript.addSuperscript()
 
-const dataSource = new ProductData('tents');
+const dataSource = new ExternalServices('tents');
 const productId = getParam('product');
 
 console.log(dataSource.getData());

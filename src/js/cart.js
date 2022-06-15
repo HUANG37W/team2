@@ -6,6 +6,11 @@ loadHeaderFooter();
 const cart = new CartList('so-cart', document.querySelector('.product-list'));
 cart.init();
 
+if (cart.total > 0) {
+  // show our checkout button and total if there are items in the cart.
+  document.querySelector('.list-footer').classList.remove('hide');
+}
+
 import Superscript from "./superscript";
 const superscript = new Superscript();
 superscript.addSuperscript();
