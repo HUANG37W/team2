@@ -1,4 +1,4 @@
-import { getLocalStorage, setLocalStorage } from './utils.js';
+import { getLocalStorage, setLocalStorage, alertMessage, removeAllAlerts } from './utils.js';
 import ExternalServices from './ExternalServices.js';
 
 const services = new ExternalServices();
